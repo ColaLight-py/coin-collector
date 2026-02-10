@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://510bvrc1yv7u"]
+
+[ext_resource type="Texture2D" uid="uid://dxycyc6bbq5d2" path="res://Image Assets/Ben.png" id="1_cvn8h"]
+[ext_resource type="Script" uid="uid://dqha7p2fyd15d" path="res://Scripts/ben.gd" id="2_pi1s3"]
+[ext_resource type="AudioStream" uid="uid://chq1xdb80is7e" path="res://Audio Assets/Coin.wav" id="3_bfoxu"]
+
+[node name="Node2D" type="Node2D" unique_id=260070215]
+script = ExtResource("2_pi1s3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=185607114]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1480169362]
+texture = ExtResource("1_cvn8h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1024504528]
+polygon = PackedVector2Array(40, 44, 40, 22, 17, 15, 27, -11, 24, -30, 0, -40, -18, -30, -20, 8, -40, 27, -40, 44)
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1920864828]
+stream = ExtResource("3_bfoxu")

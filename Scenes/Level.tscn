@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b2ghv8nb654w6"]
+
+[ext_resource type="PackedScene" uid="uid://bbs8nu5dcwlet" path="res://Scenes/Sky.tscn" id="1_vsvp5"]
+[ext_resource type="Texture2D" uid="uid://cbb7dsjofwqw7" path="res://Image Assets/GrassTile.png" id="3_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://510bvrc1yv7u" path="res://Scenes/Ben.tscn" id="3_fuudy"]
+[ext_resource type="FontFile" uid="uid://cpupcg0p3dal" path="res://Image Assets/font.ttf" id="4_fuudy"]
+[ext_resource type="Script" uid="uid://cpqimhilvvvd1" path="res://Scripts/textlabel.gd" id="5_xylue"]
+[ext_resource type="Texture2D" uid="uid://cuy3sthde7go5" path="res://Image Assets/Coin.png" id="7_5rrr5"]
+[ext_resource type="Script" uid="uid://cei0u60jmfrsn" path="res://Scripts/coinspawn.gd" id="7_ienac"]
+[ext_resource type="Script" uid="uid://b6fkcpnlp6k4q" path="res://Scripts/coin.gd" id="8_or7tv"]
+[ext_resource type="AudioStream" uid="uid://chq1xdb80is7e" path="res://Audio Assets/Coin.wav" id="9_or7tv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xylue"]
+font = ExtResource("4_fuudy")
+font_size = 39
+font_color = Color(0.926137, 0.7724496, 0, 1)
+outline_size = 9
+outline_color = Color(0.59, 0.4425, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Level" type="Node2D" unique_id=2082688397]
+script = ExtResource("7_ienac")
+
+[node name="Sky" parent="." unique_id=2015940792 instance=ExtResource("1_vsvp5")]
+position = Vector2(-5, -4)
+
+[node name="GrassTile" type="Sprite2D" parent="." unique_id=1192908173]
+texture_filter = 1
+position = Vector2(139.75, 608.75006)
+scale = Vector2(4.324999, 4.324999)
+texture = ExtResource("3_8rbpu")
+
+[node name="GrassTile2" type="Sprite2D" parent="." unique_id=889731231]
+texture_filter = 1
+position = Vector2(385.00003, 612)
+scale = Vector2(4.5499997, 4.5499997)
+texture = ExtResource("3_8rbpu")
+
+[node name="GrassTile3" type="Sprite2D" parent="." unique_id=1558850138]
+texture_filter = 1
+position = Vector2(612.25006, 604.75006)
+scale = Vector2(3.725, 3.725)
+texture = ExtResource("3_8rbpu")
+
+[node name="GrassTile4" type="Sprite2D" parent="." unique_id=157512763]
+texture_filter = 1
+position = Vector2(838, 612.00006)
+scale = Vector2(4.4250007, 4.4250007)
+texture = ExtResource("3_8rbpu")
+
+[node name="GrassTile5" type="Sprite2D" parent="." unique_id=1661878610]
+texture_filter = 1
+position = Vector2(1045, 602.99994)
+scale = Vector2(3.1124969, 3.1124969)
+texture = ExtResource("3_8rbpu")
+
+[node name="Ben" parent="." unique_id=260070215 instance=ExtResource("3_fuudy")]
+position = Vector2(455, 508)
+metadata/score = 0
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=1694985651]
+position = Vector2(327.00003, 36.999992)
+scale = Vector2(1.9722222, 1.9722222)
+texture = ExtResource("7_5rrr5")
+script = ExtResource("8_or7tv")
+
+[node name="Text" type="Label" parent="." unique_id=1219881278]
+offset_left = -3.0
+offset_top = 29.0
+offset_right = 1155.0
+offset_bottom = 87.0
+text = "Greedy Netanyahu"
+label_settings = SubResource("LabelSettings_xylue")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_xylue")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="Text" unique_id=2133203024]
+stream = ExtResource("9_or7tv")
