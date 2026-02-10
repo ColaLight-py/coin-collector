@@ -56,7 +56,7 @@ scale = Vector2(3.1124969, 3.1124969)
 texture = ExtResource("3_8rbpu")
 
 [node name="Ben" parent="." unique_id=260070215 instance=ExtResource("3_fuudy")]
-position = Vector2(455, 508)
+position = Vector2(1106, 532)
 metadata/score = 0
 
 [node name="Coin" type="Sprite2D" parent="." unique_id=1694985651]

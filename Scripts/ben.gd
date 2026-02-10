@@ -9,4 +9,4 @@ var direction : Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down") * delta * 700
-	$".".position += direction
+	$".".position.x = clamp(position.x+direction.x, 50, 1100)
